@@ -1,7 +1,10 @@
-import { DatabaseRepository } from "./interface/database.interface";
-import { CryptoData, TransactionType } from "./interface/transaction.interface";
-import { ExchangeRatesService } from "./interface/exchange-rate.interface";
-import deci from "./utility/fixed-arithmetic";
+import { DatabaseRepository } from "../interface/database.interface";
+import {
+    CryptoData,
+    TransactionType,
+} from "../interface/transaction.interface";
+import { ExchangeRatesService } from "../interface/exchange-rate.interface";
+import deci from "../utility/fixed-arithmetic";
 
 export class PortfolioModule {
     constructor(

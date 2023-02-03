@@ -1,5 +1,5 @@
 import * as yargs from "yargs";
-import { PortfolioModule } from "./portfolio.module";
+import { PortfolioModule } from "./module/portfolio.module";
 import { CryptoCompareService } from "./provider/crypto-compare.service";
 import { CSVRepo } from "./repository/csv.repo";
 import { config } from "dotenv";
