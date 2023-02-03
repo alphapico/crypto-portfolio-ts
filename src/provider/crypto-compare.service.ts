@@ -12,7 +12,9 @@ export class CryptoCompareService implements ExchangeRatesService {
             const response = await fetch(
                 `${CRYPTO_COMPARE_API_URL}/pricemulti?fsyms=${tokens.join(
                     ","
-                )}&tsyms=${currency}`
+                )}&tsyms=${currency}&api_key=${
+                    process.env.CRYPTO_COMPARE_API_KEY
+                }`
             );
             return (await response.json()) as CryptoData;
         } catch (error) {
@@ -28,7 +30,7 @@ export class CryptoCompareService implements ExchangeRatesService {
     ): Promise<CryptoData> {
         try {
             const response = await fetch(
-                `${CRYPTO_COMPARE_API_URL}/pricehistorical?fsym=${token}&tsyms=${currency}&ts=${timestamp}`
+                `${CRYPTO_COMPARE_API_URL}/pricehistorical?fsym=${token}&tsyms=${currency}&ts=${timestamp}&api_key=${process.env.CRYPTO_COMPARE_API_KEY}`
             );
             return (await response.json()) as CryptoData;
         } catch (error) {

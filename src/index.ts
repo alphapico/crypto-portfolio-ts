@@ -2,6 +2,9 @@ import * as yargs from "yargs";
 import { PortfolioModule } from "./portfolio.module";
 import { CryptoCompareService } from "./provider/crypto-compare.service";
 import { CSVRepo } from "./repository/csv.repo";
+import { config } from "dotenv";
+
+config({ path: "../../.dev.env" });
 
 const cryptoCompareService = new CryptoCompareService();
 const csvRepo = new CSVRepo();
